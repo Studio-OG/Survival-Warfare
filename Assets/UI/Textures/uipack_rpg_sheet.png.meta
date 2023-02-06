@@ -732,10 +732,10 @@ TextureImporter:
       name: uipack_rpg_sheet_28
       rect:
         serializedVersion: 2
-        x: 290
-        y: 373
-        width: 45
-        height: 45
+        x: 291
+        y: 374
+        width: 43
+        height: 43
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -984,10 +984,10 @@ TextureImporter:
       name: uipack_rpg_sheet_40
       rect:
         serializedVersion: 2
-        x: 293
-        y: 169
-        width: 45
-        height: 49
+        x: 294
+        y: 170
+        width: 43
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1064,6 +1064,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 422
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ffaae38ecff244c8c868bb5496e08d
+      internalID: -659003899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 437
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de4323507c6b8f94ea0ece4566499676
+      internalID: 1436481822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 452
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9392b5a02e3351340abe58639b6d3739
+      internalID: -1860008058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 467
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc20b47edbde214a9915e7f2525861b
+      internalID: 2042842661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 482
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8b4b115f44be14683107cb341905c4
+      internalID: 1615541463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 497
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcedad84b91ae648a7670cc8d2e272c
+      internalID: 199332352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1079,12 +1205,16 @@ TextureImporter:
       uipack_rpg_sheet_6: 1089720808
       uipack_rpg_sheet_21: 1462221549
       uipack_rpg_sheet_12: -541658268
+      uipack_rpg_sheet_45: 1436481822
       uipack_rpg_sheet_13: -1624844373
       uipack_rpg_sheet_23: -596128571
       uipack_rpg_sheet_14: -1480343602
       uipack_rpg_sheet_15: 635926893
+      uipack_rpg_sheet_47: 2042842661
+      uipack_rpg_sheet_48: 1615541463
       uipack_rpg_sheet_10: -340741314
       uipack_rpg_sheet_37: -1017247313
+      uipack_rpg_sheet_44: -659003899
       uipack_rpg_sheet_26: 667316288
       uipack_rpg_sheet_31: 910172951
       uipack_rpg_sheet_22: 117305360
@@ -1106,7 +1236,9 @@ TextureImporter:
       uipack_rpg_sheet_0: 1248138035
       uipack_rpg_sheet_4: -446333853
       uipack_rpg_sheet_32: -2021272380
+      uipack_rpg_sheet_49: 199332352
       uipack_rpg_sheet_43: 1768810482
+      uipack_rpg_sheet_46: -1860008058
       uipack_rpg_sheet_41: 766016645
       uipack_rpg_sheet_30: -1274530948
       uipack_rpg_sheet_18: -2124951192
@@ -1115,8 +1247,8 @@ TextureImporter:
       uipack_rpg_sheet_16: 875510505
       uipack_rpg_sheet_20: -2077951613
       uipack_rpg_sheet_1: 1371819082
-      uipack_rpg_sheet_40: 448929308
       uipack_rpg_sheet_7: 708808860
+      uipack_rpg_sheet_40: 448929308
       uipack_rpg_sheet_29: 131591931
       uipack_rpg_sheet_2: 1266975190
   spritePackingTag: 
