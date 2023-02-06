@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Layer 1
+    uniqueID: 2688394053
+    locked: 0
+  - name: Layer 2
+    uniqueID: 3410199389
+    locked: 0
+  - name: Layer 3
+    uniqueID: 3937714407
+    locked: 0
+  - name: Layer 4
+    uniqueID: 3329923597
+    locked: 0
+  - name: ' Layer 5'
+    uniqueID: 3539929233
+    locked: 0
