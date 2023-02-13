@@ -50,9 +50,6 @@ TagManager:
   - name: Frontground
     uniqueID: 3937714407
     locked: 0
-  - name: Layer 4
+  - name: New Layer 4
     uniqueID: 3329923597
-    locked: 0
-  - name: ' Layer 5'
-    uniqueID: 3539929233
     locked: 0
