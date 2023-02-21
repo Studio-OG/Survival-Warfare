@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerPosition : MonoBehaviour
 {
     public static Transform Playerposition;
+    private Vector2 WorldPositionCursor;
 
     private void Start()
     {
@@ -13,7 +14,6 @@ public class PlayerPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
     }
 }

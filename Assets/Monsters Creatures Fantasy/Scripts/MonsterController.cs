@@ -35,10 +35,10 @@ public class MonsterController : MonoBehaviour
 
     bool IsClosePlayer()
     {
-        if (PlayerPosition.Playerposition.position.x - MonsterPosition.position.x <= 5 &&
-            PlayerPosition.Playerposition.position.x - MonsterPosition.position.x >= -5 &&
-            PlayerPosition.Playerposition.position.y - MonsterPosition.position.y <= 5 &&
-            PlayerPosition.Playerposition.position.y - MonsterPosition.position.y >= -5)
+        if (PlayerPosition.Playerposition.position.x - MonsterPosition.position.x <= 1 &&
+            PlayerPosition.Playerposition.position.x - MonsterPosition.position.x >= -1 &&
+            PlayerPosition.Playerposition.position.y - MonsterPosition.position.y <= 1 &&
+            PlayerPosition.Playerposition.position.y - MonsterPosition.position.y >= -1)
         {
             return true;
         }
