@@ -11,8 +11,8 @@ public class ScoreAndHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Health = 100;
-        Score = 1110;
+        Health = 3;
+        Score = 0;
     }
 
 
