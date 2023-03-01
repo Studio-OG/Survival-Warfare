@@ -38,8 +38,6 @@ public class EnemyController : MonoBehaviour
         SetAnim();
         SetDirection();
 
-
-
     }
 
 
@@ -80,11 +78,15 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        IsRun = true;
+   
+            IsRun = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IsRun = false;
+
+            IsRun = false;
+        
+       
     }
 
 
