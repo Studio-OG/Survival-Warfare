@@ -28,11 +28,17 @@ public class MonsterController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        IsFlying = false;
+        if (collision.gameObject.tag == "Player")
+        {
+            IsFlying = false;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IsFlying = true;
+        if (collision.gameObject.tag == "Player")
+        {
+            IsFlying = true;
+        }
     }
 
 
