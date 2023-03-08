@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Coin
   - Coin2
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Layer 1
   - Layer 2
   - Layer 3
-  - 
+  - Enemies
   - 
   - 
   - 

@@ -9,11 +9,11 @@ public class EnemyController : MonoBehaviour
     Vector2 movement;
     Transform enemyPosition;
     Rigidbody2D enemyRB;
-    Animator enemyAnim;
+    public Animator animator;
     SpriteRenderer enemySR;
+    bool IsMoving;
     bool IsRun;
-
-
+    public float minDistance = 2f;
 
 
 
@@ -23,13 +23,29 @@ public class EnemyController : MonoBehaviour
     {
         enemyPosition = GetComponent<Transform>();
         enemyRB = GetComponent<Rigidbody2D>();
-        enemyAnim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         enemySR = GetComponent<SpriteRenderer>();
+        IsMoving = true;
 
     }
 
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            IsMoving = false;
 
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            IsMoving = true;
+
+        }
+    }
 
 
     // Update is called once per frame
@@ -38,29 +54,50 @@ public class EnemyController : MonoBehaviour
         SetAnim();
         SetDirection();
 
+
     }
 
 
     void SetAnim()
     {
-        if (IsRun)
+        if (movement != Vector2.zero)
         {
-            enemyAnim.SetBool("IsClose", true);
+            animator.SetBool("IsRun", true);
+
+
         }
         else
         {
-            enemyAnim.SetBool("IsClose", false);
+
+            animator.SetBool("IsRun", false);
+
+        }
+
+
+
+        if (IsMoving)   //saldırı animasyonu devreye girer
+        {
+            animator.SetBool("IsClose", false);
+
+
+        }
+        else
+        {
+            animator.SetBool("IsClose", true);
+
         }
 
 
 
     }
 
+  
+
+
+
 
     void SetDirection()
     {
-
-
         if (movement.x < 0f)
         {
             enemySR.flipX = true;
@@ -69,32 +106,29 @@ public class EnemyController : MonoBehaviour
         {
             enemySR.flipX = false;
         }
-        Vector3 direction = player.position - enemyPosition.position;
+        Vector3 direction = ((player.position - enemyPosition.position) * minDistance);
         direction.Normalize();
 
         movement = direction;
     }
 
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-   
-            IsRun = true;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
 
-            IsRun = false;
-        
-       
-    }
 
 
     private void FixedUpdate()
     {
 
+        if (IsMoving == true)
+        {
+            MoveEnemy(movement);
+        }
+
+
+    }
+
+    void MoveEnemy(Vector2 direction)
+    {
         enemyRB.MovePosition((Vector2)transform.position + movement * speed * Time.fixedDeltaTime);
-
-
     }
 }
