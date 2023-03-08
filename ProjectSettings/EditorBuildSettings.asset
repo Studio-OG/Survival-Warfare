@@ -4,11 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Scene2.unity
-    guid: 9574ce4c4bcf54b1592f249c36b2491b
-  - enabled: 1
-    path: Assets/kopyala/Scenes/UIScene.unity
-    guid: 278db6a264dabb04ab53174bcabeb9cd
+  m_Scenes: []
   m_configObjects: {}
