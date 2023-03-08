@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6569200888995031154}
   - component: {fileID: 6569200888995031153}
   - component: {fileID: 6569200888995031152}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Goblin
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   player: {fileID: 0}
+  animator: {fileID: 0}
+  minDistance: 2
 --- !u!95 &6569200888995031154
 Animator:
   serializedVersion: 5
