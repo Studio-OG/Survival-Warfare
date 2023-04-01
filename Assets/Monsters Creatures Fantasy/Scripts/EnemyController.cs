@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     Vector2 movement;
     Transform enemyPosition;
     Rigidbody2D enemyRB;
-    public Animator animator;
+    private Animator animator;
     SpriteRenderer enemySR;
     bool IsMoving;
     bool IsRun;
