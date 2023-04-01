@@ -6,11 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuViewController : MonoBehaviour
 {
-    public Scene scene2;
     // Start is called before the first frame update
     void Start()
     {
-        scene2 = SceneManager.GetActiveScene();
+        
     }
 
     // Update is called once per frame
@@ -26,7 +25,7 @@ public class MenuViewController : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(scene2.name);
+        SceneManager.LoadScene(0);
         StartViewController.IsStart = false;
     }
 }
