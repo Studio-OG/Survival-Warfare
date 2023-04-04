@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CrosshairCurser : MonoBehaviour
 {
+    public Texture2D CursorImage;
+
     void Start()
     {
-        Cursor.visible = false;
+        Cursor.visible = true;
     }
     // Update is called once per frame
     void Update()
@@ -14,7 +16,10 @@ public class CrosshairCurser : MonoBehaviour
         Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         position.z = 1.0f;
         transform.position = position;
-
-
+        Cursor.SetCursor(CursorImage, Vector2.zero, CursorMode.ForceSoftware);
     }
+
+
 }
+
+

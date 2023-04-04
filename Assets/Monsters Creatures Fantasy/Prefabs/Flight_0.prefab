@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1962541179}
   - component: {fileID: 1962541180}
   - component: {fileID: 1962541175}
+  - component: {fileID: 650512568}
   m_Layer: 0
   m_Name: Flight_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,5 +159,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b3d418a5aa69d41944380bf5707179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4845974927979997327, guid: b5d12cdd5bd2b1941b4d8aa98b1bee3a, type: 3}
+  player: {fileID: 0}
   moveSpeed: 3.5
+--- !u!114 &650512568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353921264769682409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d9ce483336d8b4aaeea448acad58ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 4396647674542071506, guid: 547a40117b55d7b47a2170eea04f3259, type: 3}

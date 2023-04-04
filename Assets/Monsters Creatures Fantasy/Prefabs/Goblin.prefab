@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6569200888995031154}
   - component: {fileID: 6569200888995031153}
   - component: {fileID: 6569200888995031152}
+  - component: {fileID: 629627546}
   m_Layer: 23
   m_Name: Goblin
   m_TagString: Enemy
@@ -103,7 +104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   player: {fileID: 0}
-  animator: {fileID: 0}
   minDistance: 2
 --- !u!95 &6569200888995031154
 Animator:
@@ -172,3 +172,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.33, y: 0.36}
   m_EdgeRadius: 0
+--- !u!114 &629627546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569200888995031117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d9ce483336d8b4aaeea448acad58ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 4396647674542071506, guid: 547a40117b55d7b47a2170eea04f3259, type: 3}
