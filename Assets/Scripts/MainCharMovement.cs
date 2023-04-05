@@ -114,45 +114,4 @@ public class MainCharMovement : MonoBehaviour
 
 
 
-    //void OnFire()
-    //{
-    //   playerAnim.SetTrigger("swordAttack");
-    //}
-
-    //public void SwordAttack()
-    //{
-    //    LockMovement();
-
-    //    if (playerSR.flipX == true)
-    //    {
-    //        swordAttack.AttackLeft();
-    //    }
-    //    else
-    //    {
-    //        swordAttack.AttackRight();
-    //    }
-    //}
-
-    //public void EndSwordAttack()
-    //{
-    //    UnlockMovement();
-    //    swordAttack.StopAttack();
-    //}
-
-    //public void LockMovement()
-    //{
-    //    canMove = false;
-    //}
-
-    //public void UnlockMovement()
-    //{
-    //    canMove = true;
-    //}}
-
-
-
-
-
-
-
-
+  

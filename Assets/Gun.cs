@@ -6,12 +6,15 @@ public class Gun : MonoBehaviour
 {
     public GameObject cross;
     public GameObject bullet;
-    //public AudioSource bulletVoice;
     private Vector3 mousePos;
     public float offSet;
+    bool isStart;
+    
+
+
     void Start()
     {
-
+        isStart = true;
     }
 
     void Update()
@@ -22,8 +25,17 @@ public class Gun : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            if (isStart)
+            {
+                bullet.SetActive(false);
+                isStart = false;
+
+            }
+            else { bullet.SetActive(true); }
+
+        
             shot();
-            //bulletVoice.Play();
+          
         }
 
     }
@@ -39,4 +51,13 @@ public class Gun : MonoBehaviour
     {
         Instantiate(bullet, transform.position, Quaternion.identity);
     }
+
+    
+    
+
+    
 }
+
+
+
+

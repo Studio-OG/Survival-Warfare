@@ -32,13 +32,13 @@ public class MainCharHealth : MonoBehaviour
 
         {
 
-            TakeDamage(5);
+            TakeDamage(10);
 
         }
 
     }
 
-    private void EnemyHit(Collider2D other)
+     public void EnemyHit(Collider2D other)
 
     {
 
@@ -46,8 +46,8 @@ public class MainCharHealth : MonoBehaviour
 
         {
 
-            TakeDamage(5);
-
+            TakeDamage(10);
+            
         }
 
     }
@@ -56,7 +56,7 @@ public class MainCharHealth : MonoBehaviour
 
     {
 
-        animator.SetTrigger("Hurt");
+        animator.SetBool("IsHurt", true);
 
         if (currentHealth <= 0)
         {
@@ -71,13 +71,14 @@ public class MainCharHealth : MonoBehaviour
     }
     void Die()
     {
-        Debug.Log("Player died!");
+        
 
         // Die
         animator.SetBool("IsDead", true);
 
-        
-
+        Debug.Log("Player died!");
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
     }
 }
 

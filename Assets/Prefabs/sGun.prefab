@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fcd810d87c6428a8a97e1a3456706f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cross: {fileID: 0}
+  cross: {fileID: 6407805188681352671, guid: d60811767bf68554c8b070b5c2b1cbf7, type: 3}
   bullet: {fileID: 3406779979215849946, guid: a8a72799d933b455dbff66d3e497da8c, type: 3}
   offSet: 10

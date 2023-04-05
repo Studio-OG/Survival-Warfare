@@ -21,17 +21,19 @@ public class EnemyHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        
 
         // hurt animasyonunu oynat
 
-        animator.SetTrigger("Hurt");
+        animator.SetBool("IsHurt", true);
 
         if (currentHealth <= 0)
         {
             Die();
         }
         //Destroy(gameObject);
+
+        currentHealth -= damage;
     }
 
     void Die()
