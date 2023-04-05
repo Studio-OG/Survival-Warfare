@@ -18,14 +18,12 @@ public class UIController : MonoBehaviour
     }
 
 
-
-
-
     public void EscMenu()
     {
         
         if (Input.GetKeyDown(KeyCode.Escape) && StartViewController.IsStarted() && !CanvasCredits.enabled)
         {
+            StartViewController.IsStart = false;
             if (Time.timeScale != 0)
             {
                 gameObject.GetComponent<Canvas>().enabled = true;

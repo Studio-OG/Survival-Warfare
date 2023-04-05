@@ -1,20 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class YetenekSecimController : MonoBehaviour
 {
+    private AudioSource audioSource;
+    private Button button;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        button = GetComponent<Button>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
+
+    public void OnPointerEnter()
+    {
+        audioSource.Play();
+    }
+
+
 
 
     public void Option1()
@@ -37,7 +48,6 @@ public class YetenekSecimController : MonoBehaviour
         CloseTab();
         StartViewController.IsStart = true;
         ResumeGame();
-
     }
 
     void ResumeGame()
