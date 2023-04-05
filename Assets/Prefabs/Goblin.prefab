@@ -17,7 +17,8 @@ GameObject:
   - component: {fileID: 8797859180241583608}
   - component: {fileID: 2392039397771694798}
   - component: {fileID: 2392039397771694799}
-  m_Layer: 23
+  - component: {fileID: 928753549}
+  m_Layer: 0
   m_Name: Goblin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -108,6 +109,7 @@ MonoBehaviour:
   player: {fileID: 0}
   animator: {fileID: 8797859181048724158}
   minDistance: 100
+  mainCharHealth: {fileID: 0}
 --- !u!95 &8797859181048724158
 Animator:
   serializedVersion: 5
@@ -148,7 +150,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8797859181048724156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,18 +164,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.037655115, y: -0.007508546}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33, y: 0.36}
+    oldSize: {x: 0.32, y: 0.36}
     newSize: {x: 0.33, y: 0.36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33, y: 0.36}
+  m_Size: {x: 0.37175226, y: 0.3750171}
   m_EdgeRadius: 0
 --- !u!114 &8797859180241583608
 MonoBehaviour:
@@ -201,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8797859181048724158}
-  maxHealth: 10
+  maxHealth: 100
 --- !u!114 &2392039397771694799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,3 +217,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+--- !u!114 &928753549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797859181048724097}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a280b518cf4c7417680aab1cfe2599b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCharHealth: {fileID: 0}
+  animator: {fileID: 8797859181048724158}

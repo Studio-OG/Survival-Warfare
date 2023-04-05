@@ -6,9 +6,11 @@ public class BulletController : MonoBehaviour
 {
     private Vector2 target;
     public float speed;
+   
 
     void Start()
     {
+
         target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
     void Update()

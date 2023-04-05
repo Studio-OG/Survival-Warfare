@@ -26,17 +26,19 @@ public class MainCharAttack : MonoBehaviour
             }
         }
 
-
+        
 
     }
 
+    
 
 
 
     void Attack()
     {
-        // Attack animasyonunu çalıştır
-        playerAnim.SetTrigger("Attack");
+        playerAnim.SetBool("IsAttack", true);
+
+
 
         // Attack range (saldırı menzili)  in içine girecek düşmanları belirle ve bunları hitEnemies içerisinde depola
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -45,8 +47,15 @@ public class MainCharAttack : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyHealth>().TakeDamage(20);
+
         }
+
+
+        playerAnim.SetBool("IsAttack", false);
+
     }
+
+
 
     private void OnDrawGizmosSelected()
     {

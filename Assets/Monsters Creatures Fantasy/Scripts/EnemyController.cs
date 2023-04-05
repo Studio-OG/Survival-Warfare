@@ -11,11 +11,14 @@ public class EnemyController : MonoBehaviour
     Rigidbody2D enemyRB;
     public Animator animator;
     SpriteRenderer enemySR;
-    bool IsMoving;
-    bool IsRun;
+    bool canMove = true;
+    //bool IsClose = true;
+    
     public float minDistance = 2f;
 
 
+
+    public MainCharHealth mainCharHealth;
 
 
     // Start is called before the first frame update
@@ -25,8 +28,7 @@ public class EnemyController : MonoBehaviour
         enemyRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySR = GetComponent<SpriteRenderer>();
-        IsMoving = true;
-
+        
     }
 
 
@@ -34,7 +36,8 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            IsMoving = false;
+
+            animator.SetBool("IsAttack", true);
 
         }
     }
@@ -42,7 +45,11 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            IsMoving = true;
+
+
+            animator.SetBool("IsAttack", false);
+
+            mainCharHealth.TakeDamage(10);
 
         }
     }
@@ -60,34 +67,24 @@ public class EnemyController : MonoBehaviour
 
     void SetAnim()
     {
-        if (movement != Vector2.zero)
+
+
+        if (canMove)
         {
-            animator.SetBool("IsRun", true);
+            if (movement != Vector2.zero)
+            {
+                animator.SetBool("IsRun", true);
 
 
+            }
+            else
+            {
+
+                animator.SetBool("IsRun", false);
+
+            }
         }
-        else
-        {
-
-            animator.SetBool("IsRun", false);
-
-        }
-
-
-
-        if (IsMoving)   //saldırı animasyonu devreye girer
-        {
-            animator.SetBool("IsClose", false);
-
-
-        }
-        else
-        {
-            animator.SetBool("IsClose", true);
-
-        }
-
-
+        
 
     }
 
@@ -98,18 +95,22 @@ public class EnemyController : MonoBehaviour
 
     void SetDirection()
     {
-        if (movement.x < 0f)
+        if (canMove)
         {
-            enemySR.flipX = true;
-        }
-        else
-        {
-            enemySR.flipX = false;
-        }
-        Vector3 direction = ((player.position - enemyPosition.position) * minDistance);
-        direction.Normalize();
+            if (movement.x < 0f)
+            {
+                enemySR.flipX = true;
+            }
+            else
+            {
+                enemySR.flipX = false;
+            }
+            Vector3 direction = ((player.position - enemyPosition.position) * minDistance);
+            direction.Normalize();
 
-        movement = direction;
+            movement = direction;
+        }
+        
     }
 
 
@@ -119,7 +120,7 @@ public class EnemyController : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (IsMoving == true)
+       
         {
             MoveEnemy(movement);
         }
@@ -129,6 +130,6 @@ public class EnemyController : MonoBehaviour
 
     void MoveEnemy(Vector2 direction)
     {
-        enemyRB.MovePosition((Vector2)transform.position + movement * speed * Time.fixedDeltaTime);
+        enemyRB.MovePosition((Vector2)transform.position + (direction * speed * Time.fixedDeltaTime));
     }
 }

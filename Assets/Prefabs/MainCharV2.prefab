@@ -178,7 +178,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00040450692, y: 0.008899391}
@@ -229,7 +229,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8388608
-  attackRange: 0.65
+  attackRange: 0.68
   attackDamage: 40
   attackRate: 2
 --- !u!114 &609787211568346605
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4845974927979997321}
-  maxHealth: 15
+  maxHealth: 100
   currentHealth: 3
 --- !u!1001 &1994325371619721386
 PrefabInstance:
