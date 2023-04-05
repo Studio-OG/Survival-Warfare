@@ -25,6 +25,9 @@ public class CloseTab1 : MonoBehaviour
     public void CloseTab2()
     {
         transform.parent.gameObject.transform.parent.gameObject.GetComponent<Canvas>().enabled = false;
+        Time.timeScale = 1;
+        StartViewController.IsStart = true;
+
     }
 
 }

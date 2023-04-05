@@ -23,6 +23,7 @@ public class UIController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Escape) && StartViewController.IsStarted() && !CanvasCredits.enabled)
         {
+            StartViewController.IsStart = false;
             if (Time.timeScale != 0)
             {
                 gameObject.GetComponent<Canvas>().enabled = true;

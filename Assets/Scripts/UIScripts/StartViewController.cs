@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StartViewController : MonoBehaviour
 {
     public static bool IsStart = false;
+    private bool musicStatus = true;
+    public AudioSource mainMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +53,25 @@ public class StartViewController : MonoBehaviour
     void ResumeGame()
     {
         Time.timeScale = 1;
+    }
+
+    public void MusicStatus()
+    {
+        if (musicStatus)
+        {
+            musicStatus = false;
+            mainMusic.Stop();
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(true);
+
+        }
+        else
+        {
+            musicStatus = true;
+            mainMusic.Play();
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(false);
+        }
+
     }
 }
