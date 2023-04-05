@@ -25,16 +25,13 @@ public class Gun : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (isStart)
+            if (StartViewController.IsStarted())
             {
-                bullet.SetActive(false);
-                isStart = false;
+                bullet.SetActive(true);
 
+                shot();
             }
-            else { bullet.SetActive(true); }
-
-        
-            shot();
+            else { bullet.SetActive(false); }
           
         }
 

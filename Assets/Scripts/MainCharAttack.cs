@@ -30,9 +30,6 @@ public class MainCharAttack : MonoBehaviour
 
     }
 
-    
-
-
 
     void Attack()
     {
