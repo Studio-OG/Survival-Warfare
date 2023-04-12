@@ -9,6 +9,7 @@ public class StartViewController : MonoBehaviour
     public static bool IsStart = false;
     private bool musicStatus = true;
     public AudioSource mainMusic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +45,6 @@ public class StartViewController : MonoBehaviour
     {
         return IsStart;
     }
-
 
     void PauseGame()
     {
