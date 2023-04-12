@@ -16,40 +16,22 @@ public class EnemyAttack : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-   
 
 
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-
-        animator.SetBool("IsAttack", false);
-
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
 
         {
-
-            mainCharHealth.TakeDamage(10);
+            animator.SetBool("IsAttack", false);
+            mainCharHealth.TakeDamage(1);
 
         }
 
-      
+
     }
 
 
-
-
-    //if (IsMoving)   //saldırı animasyonu devreye girer
-    //{
-    //    animator.SetBool("IsClose", false);
-
-
-    //}
-    //else
-    //{
-    //    animator.SetBool("IsClose", true);
-
-    //}
 
 
 

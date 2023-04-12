@@ -45,7 +45,7 @@ public class MonsterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #region Karakter yakýndaysa saldýrý animasyonu devreye girer
+        #region Karakter yak?ndaysa sald?r? animasyonu devreye girer
         if (IsFlying)
         {
             anim.SetBool("IsClose", false);
@@ -60,16 +60,18 @@ public class MonsterController : MonoBehaviour
 
 
 
-        #region Karaktere doðru hareket et
+        #region Karaktere do?ru hareket et
         Vector3 direction = player.position - MonsterPosition.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         if (direction.x <= 0)
         {
             sr.flipY = true;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = false;
         }
         else
         {
             sr.flipY = false;
+            transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = true;
         }
         rb.rotation = angle;
         direction.Normalize();

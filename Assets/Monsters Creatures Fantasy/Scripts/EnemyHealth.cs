@@ -9,20 +9,23 @@ public class EnemyHealth : MonoBehaviour
 
     public int maxHealth = 100;
     int currentHealth;
+    public int gunHealth = 10;
 
+    public HealthBar healthBar;
+
+  
 
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
     {
-        
-
         // hurt animasyonunu oynat
 
         animator.SetBool("IsHurt", true);
@@ -31,20 +34,25 @@ public class EnemyHealth : MonoBehaviour
         {
             Die();
         }
+
         //Destroy(gameObject);
 
         currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
+
     }
 
     void Die()
     {
-        Debug.Log("Enemy died!");
-
         // Die
         animator.SetBool("IsDead", true);
 
+        Debug.Log("Enemy died!");
+
         // Düşmanı devre dışı bırak
         GetComponent<Collider2D>().enabled = false;
+
         this.enabled = false;
 
     }
@@ -52,18 +60,26 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+       
     }
 
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+    
+
         if (col.tag == "Bullet")
         {
-            currentHealth--;
+            gunHealth--;
 
+            healthBar.SetHealth(gunHealth);
 
+            if (gunHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+
+           
         }
 
     }
