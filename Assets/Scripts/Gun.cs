@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -8,7 +9,9 @@ public class Gun : MonoBehaviour
     public GameObject bullet;
     private Vector3 mousePos;
     public float offSet;
-    bool isStart;
+    private bool isStart;
+
+   
     
 
 
@@ -29,9 +32,12 @@ public class Gun : MonoBehaviour
             {
                 bullet.SetActive(true);
 
-                shot();
+                Shot();
             }
-            else { bullet.SetActive(false); }
+            else
+            {
+                bullet.SetActive(false);
+            }
           
         }
 
@@ -44,15 +50,13 @@ public class Gun : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, rotateZ + offSet);
     }
 
-    private void shot()
+    public void Shot()
     {
         Instantiate(bullet, transform.position, Quaternion.identity);
+
     }
 
-    
-    
-
-    
+   
 }
 
 

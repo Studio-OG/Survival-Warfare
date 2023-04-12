@@ -6,18 +6,20 @@ public class MainCharHealth : MonoBehaviour
 {
     public Animator animator;
 
-   
-    public int maxHealth = 15;
-
+    public int maxHealth = 100;
     public int currentHealth;
+
+    public HealthBar healthBar;
+
+
 
     
 
     void Start()
 
     {
-
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         animator = GetComponent<Animator>();
     }
 
@@ -28,29 +30,11 @@ public class MainCharHealth : MonoBehaviour
 
     {
 
-        if (Input.GetMouseButtonDown(1))
-
-        {
-
-            TakeDamage(10);
-
-        }
+       
 
     }
 
-     public void EnemyHit(Collider2D other)
-
-    {
-
-        if (other.CompareTag("Enemy"))
-
-        {
-
-            TakeDamage(10);
-            
-        }
-
-    }
+   
 
     public void TakeDamage(int damage)
 
@@ -66,18 +50,20 @@ public class MainCharHealth : MonoBehaviour
 
         currentHealth -= damage;
 
+        healthBar.SetHealth(currentHealth); 
+
         
 
     }
     void Die()
     {
-        
-
         // Die
         animator.SetBool("IsDead", true);
 
         Debug.Log("Player died!");
+
         GetComponent<Collider2D>().enabled = false;
+
         this.enabled = false;
     }
 }

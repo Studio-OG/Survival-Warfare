@@ -14,6 +14,20 @@ public class MainCharAttack : MonoBehaviour
     public float attackRate = 2f;
     float nextAttackTime = 0f;
 
+
+    private bool canAttack = true;
+
+
+    private void Start()
+    {
+        playerAnim = GetComponent<Animator>();
+    }
+
+
+
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -26,29 +40,32 @@ public class MainCharAttack : MonoBehaviour
             }
         }
 
-        
-
     }
 
 
     void Attack()
     {
-        playerAnim.SetBool("IsAttack", true);
-
-
-
-        // Attack range (saldırı menzili)  in içine girecek düşmanları belirle ve bunları hitEnemies içerisinde depola
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-        // Düşmanlara zarar ver
-        foreach (Collider2D enemy in hitEnemies)
+        if (canAttack)
         {
-            enemy.GetComponent<EnemyHealth>().TakeDamage(20);
+
+            // Attack range (saldırı menzili)  in içine girecek düşmanları belirle ve bunları hitEnemies içerisinde depola
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            // Düşmanlara zarar ver
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<EnemyHealth>().TakeDamage(20);
+
+            }
+
+            playerAnim.SetBool("IsAttack", true);
 
         }
+        else
+        {
+            playerAnim.SetBool("IsAttack", false);
+        }
 
-
-        playerAnim.SetBool("IsAttack", false);
 
     }
 
@@ -62,4 +79,8 @@ public class MainCharAttack : MonoBehaviour
         //Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
+
 }
+
+
+
