@@ -66,12 +66,10 @@ public class MonsterController : MonoBehaviour
         if (direction.x <= 0)
         {
             sr.flipY = true;
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = false;
         }
         else
         {
             sr.flipY = false;
-            transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = true;
         }
         rb.rotation = angle;
         direction.Normalize();
