@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D enemyRB;
     private Animator animator;
     SpriteRenderer enemySR;
-    private bool canMove = true;
+    public static bool canMove = true;
     public Animator playerAnim;
     
 
@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !animator.GetBool("IsDead"))
         {
             canMove = true;
         }
@@ -71,7 +71,6 @@ public class Enemy : MonoBehaviour
         if (movement != Vector2.zero && canMove && !playerAnim.GetBool("IsDead"))
         {
             animator.SetBool("IsRun", true);
-
 
         }
         else
@@ -107,6 +106,9 @@ public class Enemy : MonoBehaviour
     {
         if (canMove == true && !playerAnim.GetBool("IsDead"))
         {
+            Debug.Log("koşuyor");
+
+            Debug.Log("koşuyor");
             EnemyMove(movement);
         }
     }
@@ -123,9 +125,6 @@ public class Enemy : MonoBehaviour
     public void Attack()
     {
         Debug.Log("Saldırı yapıldı");
-
         mainCharHealth.TakeDamage(10);
-
-
     }
 }

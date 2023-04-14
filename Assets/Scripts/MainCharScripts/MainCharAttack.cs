@@ -57,7 +57,6 @@ public class MainCharAttack : MonoBehaviour
         if (canAttack && Input.GetMouseButton(1))
         {
 
-
             playerAnim.SetBool("IsAttack", true);
 
 
