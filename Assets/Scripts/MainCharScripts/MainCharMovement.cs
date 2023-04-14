@@ -84,16 +84,9 @@ public class MainCharMovement : MonoBehaviour
                 playerSR.flipX = false;
             }
         }
-
-
-       
-
-
     }
 
     
-
-
 
     void OnMovement(InputValue value)
     {

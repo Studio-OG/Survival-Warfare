@@ -41,26 +41,29 @@ public class EnemyHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
+        Invoke("Deneme", 1f);
+
+        
     }
 
     void Die()
     {
         // Die
         animator.SetBool("IsDead", true);
-
+        Enemy.canMove = false;
         Debug.Log("Enemy died!");
 
         // Düşmanı devre dışı bırak
         GetComponent<Collider2D>().enabled = false;
 
-        this.enabled = false;
+        Invoke("DestroyEnemy", 3f);
+        //this.enabled = false;
 
     }
 
-    // Update is called once per frame
-    void Update()
+   void DestroyEnemy()
     {
-       
+        Destroy(gameObject);
     }
 
 
@@ -79,8 +82,12 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(gameObject);
             }
 
-           
         }
-
     }
+
+    public void Deneme()
+    {
+        animator.SetBool("IsHurt", false);
+    }
+
 }

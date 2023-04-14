@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class MainCharHealth : MonoBehaviour
 {
+
     public Animator animator;
 
     public int maxHealth = 100;
     public int currentHealth;
-
     public HealthBar healthBar;
+    public Animator enemyAnim;
 
-
-
-    
 
     void Start()
 
@@ -24,47 +22,49 @@ public class MainCharHealth : MonoBehaviour
     }
 
 
-
-
-    void Update()
-
-    {
-
-       
-
-    }
-
-   
-
     public void TakeDamage(int damage)
 
     {
 
-        animator.SetBool("IsHurt", true);
-
-        if (currentHealth <= 0)
+        if (enemyAnim.GetBool("IsClose") && !animator.GetBool("IsAttack"))
         {
-            Die();
+            animator.SetBool("IsHurt", true);
+
+            currentHealth -= damage;
+
+            healthBar.SetHealth(currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
+        Invoke("Deneme",0.5f);
+
         //Destroy(gameObject);
 
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth); 
-
-        
 
     }
+
+
     void Die()
     {
+       
         // Die
-        animator.SetBool("IsDead", true);
-
         Debug.Log("Player died!");
+
+        animator.SetBool("IsDead", true);
+        enemyAnim.SetBool("IsRun", false);
+
 
         GetComponent<Collider2D>().enabled = false;
 
         this.enabled = false;
+    }
+
+    public void Deneme()
+    {
+        animator.SetBool("IsHurt", false);
     }
 }
 
