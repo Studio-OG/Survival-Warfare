@@ -31,15 +31,7 @@ public class MainCharAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= nextAttackTime)
-        {
-            //if (Input.GetMouseButtonDown(1))
-            //{
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
-            //}
-        }
-
+        Attack();
     }
 
 
