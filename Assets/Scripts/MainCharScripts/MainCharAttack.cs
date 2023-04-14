@@ -12,7 +12,7 @@ public class MainCharAttack : MonoBehaviour
     public int attackDamage = 40;
 
     public float attackRate = 2f;
-    float nextAttackTime = 0f;
+   
 
 
     private bool canAttack = true;
@@ -35,22 +35,30 @@ public class MainCharAttack : MonoBehaviour
     }
 
 
+
+    public void Damage()
+    {
+        
+        // Attack range (saldırı menzili)  in içine girecek düşmanları belirle ve bunları hitEnemies içerisinde depola
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        // Düşmanlara zarar ver
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<EnemyHealth>().TakeDamage(20);
+            Debug.Log("Atak yapıldı");
+
+        }
+    }
+
+
     void Attack()
     {
         if (canAttack && Input.GetMouseButton(1))
         {
 
+
             playerAnim.SetBool("IsAttack", true);
-
-            // Attack range (saldırı menzili)  in içine girecek düşmanları belirle ve bunları hitEnemies içerisinde depola
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-            // Düşmanlara zarar ver
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                enemy.GetComponent<EnemyHealth>().TakeDamage(20);
-
-            }
 
 
         }
