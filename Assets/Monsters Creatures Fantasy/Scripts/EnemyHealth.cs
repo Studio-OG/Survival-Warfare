@@ -82,11 +82,8 @@ public class EnemyHealth : MonoBehaviour
                 Destroy(gameObject);
             }
 
-           
         }
-
     }
-
 
     public void Deneme()
     {
