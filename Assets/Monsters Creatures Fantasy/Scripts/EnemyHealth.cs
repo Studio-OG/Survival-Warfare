@@ -41,6 +41,9 @@ public class EnemyHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
+        Invoke("Deneme", 1f);
+
+        
     }
 
     void Die()
@@ -83,4 +86,12 @@ public class EnemyHealth : MonoBehaviour
         }
 
     }
+
+
+    void Deneme()
+    {
+        animator.SetBool("IsHurt", false);
+
+    }
+
 }

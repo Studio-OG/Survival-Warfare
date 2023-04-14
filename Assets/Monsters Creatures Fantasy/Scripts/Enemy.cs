@@ -13,8 +13,8 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     SpriteRenderer enemySR;
     private bool canMove = true;
+    public Animator playerAnim;
     
-
 
     public MainCharHealth mainCharHealth;
 
@@ -27,10 +27,12 @@ public class Enemy : MonoBehaviour
         enemyRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySR = GetComponent<SpriteRenderer>();
+     
+        
     }
 
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -38,13 +40,18 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             canMove = true;
         }
     }
+
+
+
+
+    
 
 
     // Update is called once per frame
@@ -61,15 +68,14 @@ public class Enemy : MonoBehaviour
 
 
 
-        if (movement != Vector2.zero)
+        if (movement != Vector2.zero && canMove && !playerAnim.GetBool("IsDead"))
         {
             animator.SetBool("IsRun", true);
 
 
         }
         else
-        {
-
+        { 
             animator.SetBool("IsRun", false);
 
         }
@@ -99,7 +105,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (canMove == true)
+        if (canMove == true && !playerAnim.GetBool("IsDead"))
         {
             EnemyMove(movement);
         }
@@ -107,7 +113,7 @@ public class Enemy : MonoBehaviour
 
 
 
-    void EnemyMove(Vector2 direction)
+    private void EnemyMove(Vector2 direction)
     {
         enemyRB.MovePosition((Vector2)transform.position + (direction * speed * Time.deltaTime));
     }
@@ -117,5 +123,9 @@ public class Enemy : MonoBehaviour
     public void Attack()
     {
         Debug.Log("Saldırı yapıldı");
+
+        mainCharHealth.TakeDamage(10);
+
+
     }
 }

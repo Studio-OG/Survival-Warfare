@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MainCharHealth : MonoBehaviour
 {
+    private bool takeDamage;
+
     public Animator animator;
 
     public int maxHealth = 100;
@@ -11,6 +13,9 @@ public class MainCharHealth : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public Animator enemyAnim;
+
+   
 
 
     
@@ -39,28 +44,43 @@ public class MainCharHealth : MonoBehaviour
     public void TakeDamage(int damage)
 
     {
+        takeDamage = true;
 
-        animator.SetBool("IsHurt", true);
-
-        if (currentHealth <= 0)
+        if (takeDamage && !animator.GetBool("IsAttack"))
         {
-            Die();
+            animator.SetBool("IsHurt", true);
+
+            currentHealth -= damage;
+
+            healthBar.SetHealth(currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
-        //Destroy(gameObject);
-
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth); 
-
+        else
+        {
+            animator.SetBool("IsHurt", false);
+        }
         
 
+
+        //Destroy(gameObject);
+
+
     }
+
+
     void Die()
     {
+       
         // Die
-        animator.SetBool("IsDead", true);
-
         Debug.Log("Player died!");
+
+        animator.SetBool("IsDead", true);
+        enemyAnim.SetBool("IsRun", false);
+
 
         GetComponent<Collider2D>().enabled = false;
 

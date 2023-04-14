@@ -33,11 +33,11 @@ public class MainCharAttack : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetMouseButtonDown(1))
-            {
+            //if (Input.GetMouseButtonDown(1))
+            //{
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
-            }
+            //}
         }
 
     }
@@ -45,8 +45,10 @@ public class MainCharAttack : MonoBehaviour
 
     void Attack()
     {
-        if (canAttack)
+        if (canAttack && Input.GetMouseButton(1))
         {
+
+            playerAnim.SetBool("IsAttack", true);
 
             // Attack range (saldırı menzili)  in içine girecek düşmanları belirle ve bunları hitEnemies içerisinde depola
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -58,7 +60,6 @@ public class MainCharAttack : MonoBehaviour
 
             }
 
-            playerAnim.SetBool("IsAttack", true);
 
         }
         else

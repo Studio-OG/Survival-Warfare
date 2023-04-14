@@ -9,15 +9,13 @@ public class Gun : MonoBehaviour
     public GameObject bullet;
     private Vector3 mousePos;
     public float offSet;
-    private bool isStart;
-
    
-    
+
 
 
     void Start()
     {
-        isStart = true;
+
     }
 
     void Update()
@@ -52,6 +50,7 @@ public class Gun : MonoBehaviour
 
     public void Shot()
     {
+     
         Instantiate(bullet, transform.position, Quaternion.identity);
 
     }
