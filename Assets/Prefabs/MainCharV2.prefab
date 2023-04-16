@@ -713,6 +713,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 3
   healthBar: {fileID: 848852839}
+  enemyAnim: {fileID: 0}
 --- !u!1001 &1994325371619721386
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 270707831874961842}
   - component: {fileID: 3314698704962494405}
   - component: {fileID: 8109210841938404537}
-  m_Layer: 23
+  m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1962541175}
   - component: {fileID: 650512568}
   - component: {fileID: 1920309057}
-  m_Layer: 23
+  m_Layer: 0
   m_Name: Flight_0
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 5280304698860216130}
   - component: {fileID: 4803732513816649918}
   - component: {fileID: 5797658412888717144}
-  m_Layer: 23
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 1688873960719335180}
   - component: {fileID: 4014027463185152376}
   - component: {fileID: 8257551559199492964}
-  m_Layer: 23
+  m_Layer: 0
   m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 8434296521180178865}
   - component: {fileID: 7031332108726797626}
   - component: {fileID: 1042264800215605838}
-  m_Layer: 23
+  m_Layer: 0
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 1659017708266010677}
   - component: {fileID: 813300688526278673}
   - component: {fileID: 7786444634597165312}
-  m_Layer: 23
+  m_Layer: 0
   m_Name: HealthBarEnemy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

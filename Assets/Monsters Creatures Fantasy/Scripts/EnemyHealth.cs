@@ -50,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
     {
         // Die
         animator.SetBool("IsDead", true);
-        Enemy.canMove = false;
+        gameObject.GetComponent<Enemy>().canMove = false;
         Debug.Log("Enemy died!");
 
         // Düşmanı devre dışı bırak
