@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 1920309057}
   m_Layer: 23
   m_Name: Flight_0
-  m_TagString: Enemy
+  m_TagString: Flight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.049406774, y: -0.021441784}
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   moveSpeed: 3.5
+  mainCharHealth: {fileID: 0}
 --- !u!114 &650512568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1353921264769682414}
   maxHealth: 100
+  currentHealth: 0
   gunHealth: 10
   healthBar: {fileID: 8257551559199492964}
 --- !u!1 &1921968148061602316

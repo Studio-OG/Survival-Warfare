@@ -6,15 +6,16 @@ public class EnemyHealth : MonoBehaviour
 {
     public Animator animator;
 
-
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
     public int gunHealth = 10;
 
     public HealthBar healthBar;
 
-  
-
+    private void Update()
+    {
+        healthBar.SetHealth(currentHealth);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,16 +42,32 @@ public class EnemyHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
-        Invoke("Deneme", 1f);
+        Invoke("Deneme", 1f); 
+    }
 
-        
+    public void TakeDamageFlight(int damage)
+    {
+        // hurt animasyonunu oynat
+
+        animator.SetBool("IsTakeHit", true);
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            DieFlight();
+        }
+        //Destroy(gameObject);
+
+
+        healthBar.SetHealth(currentHealth);
+
+        Invoke("DenemeFlight", 1f);
     }
 
     void Die()
     {
         // Die
         animator.SetBool("IsDead", true);
-        Enemy.canMove = false;
+        gameObject.GetComponent<Enemy>().canMove = false;
         Debug.Log("Enemy died!");
 
         // Düşmanı devre dışı bırak
@@ -61,33 +78,32 @@ public class EnemyHealth : MonoBehaviour
 
     }
 
-   void DestroyEnemy()
+    void DieFlight()
+    {
+        // Die
+        animator.SetBool("IsDead", true);
+        // Düşmanı devre dışı bırak
+        GetComponent<Collider2D>().enabled = false;
+
+        Invoke("DestroyEnemy", 3f);
+        //this.enabled = false;
+
+    }
+
+    void DestroyEnemy()
     {
         Destroy(gameObject);
     }
 
 
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-    
-
-        if (col.tag == "Bullet")
-        {
-            gunHealth--;
-
-            healthBar.SetHealth(gunHealth);
-
-            if (gunHealth <= 0)
-            {
-                Destroy(gameObject);
-            }
-
-        }
-    }
-
     public void Deneme()
     {
         animator.SetBool("IsHurt", false);
+    }
+
+    public void DenemeFlight()
+    {
+        animator.SetBool("IsTakeHit", false);
     }
 
 }

@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     Rigidbody2D enemyRB;
     private Animator animator;
     SpriteRenderer enemySR;
-    public static bool canMove = true;
+    public bool canMove = true;
     public Animator playerAnim;
     
 
@@ -124,7 +124,6 @@ public class Enemy : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("Saldırı yapıldı");
         mainCharHealth.TakeDamage(10);
     }
 }

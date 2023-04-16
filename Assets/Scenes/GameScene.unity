@@ -126429,15 +126429,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 663576493}
+    - target: {fileID: 1962541175, guid: 09199cb4fef793145b1a67b937d41a93, type: 3}
+      propertyPath: mainCharHealth
+      value: 
+      objectReference: {fileID: 1818753760}
     - target: {fileID: 1353921264769682409, guid: 09199cb4fef793145b1a67b937d41a93,
         type: 3}
       propertyPath: m_Name
       value: Flight_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1353921264769682409, guid: 09199cb4fef793145b1a67b937d41a93,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1353921264769682412, guid: 09199cb4fef793145b1a67b937d41a93,
         type: 3}
@@ -126497,12 +126496,12 @@ PrefabInstance:
     - target: {fileID: 5280304698860216130, guid: 09199cb4fef793145b1a67b937d41a93,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5280304698860216130, guid: 09199cb4fef793145b1a67b937d41a93,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09199cb4fef793145b1a67b937d41a93, type: 3}
@@ -127645,7 +127644,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87890a66193394e3cb7d6284cc6b4344, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 84c0f9662d64ed743843359feab01738, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.506
   m_Pitch: 1
@@ -130270,6 +130269,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1453407685 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8797859181048724158, guid: 722c99a139f714763a787068489de9b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1715201040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1518903658
 GameObject:
   m_ObjectHideFlags: 0
@@ -130348,6 +130353,109 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518903658}
   m_CullTransparentMesh: 1
+--- !u!1001 &1524284316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8233370, guid: 722c99a139f714763a787068489de9b6, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 663576493}
+    - target: {fileID: 8233370, guid: 722c99a139f714763a787068489de9b6, type: 3}
+      propertyPath: playerAnim
+      value: 
+      objectReference: {fileID: 1878481338}
+    - target: {fileID: 8233370, guid: 722c99a139f714763a787068489de9b6, type: 3}
+      propertyPath: mainCharHealth
+      value: 
+      objectReference: {fileID: 1818753760}
+    - target: {fileID: 160146172, guid: 722c99a139f714763a787068489de9b6, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307676682, guid: 722c99a139f714763a787068489de9b6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307676682, guid: 722c99a139f714763a787068489de9b6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724097, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_Name
+      value: Goblin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724097, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.073091
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.190278
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724156, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 722c99a139f714763a787068489de9b6, type: 3}
 --- !u!1 &1601208406
 GameObject:
   m_ObjectHideFlags: 0
@@ -130519,6 +130627,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724097, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
         type: 3}
       propertyPath: m_RootOrder
@@ -130527,12 +130640,12 @@ PrefabInstance:
     - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.073091
+      value: -9.78
       objectReference: {fileID: 0}
     - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.190278
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 8797859181048724099, guid: 722c99a139f714763a787068489de9b6,
         type: 3}
@@ -130573,6 +130686,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797859181048724156, guid: 722c99a139f714763a787068489de9b6,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 722c99a139f714763a787068489de9b6, type: 3}
@@ -131235,6 +131353,11 @@ PrefabInstance:
       propertyPath: Scoretext
       value: 
       objectReference: {fileID: 1601208408}
+    - target: {fileID: 609787211568346605, guid: b5d12cdd5bd2b1941b4d8aa98b1bee3a,
+        type: 3}
+      propertyPath: enemyAnim
+      value: 
+      objectReference: {fileID: 1453407685}
     - target: {fileID: 2540893930786063215, guid: b5d12cdd5bd2b1941b4d8aa98b1bee3a,
         type: 3}
       propertyPath: CursorImage

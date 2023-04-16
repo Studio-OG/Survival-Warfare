@@ -14,6 +14,8 @@ public class MonsterController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private bool IsFlying;
 
+    public MainCharHealth mainCharHealth;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -99,6 +101,11 @@ public class MonsterController : MonoBehaviour
     void MoveMonster(Vector2 direction)
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+    }
+
+    public void Attack()
+    {
+        mainCharHealth.currentHealth -= 10;
     }
 
 

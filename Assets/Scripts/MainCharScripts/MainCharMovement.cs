@@ -48,9 +48,6 @@ public class MainCharMovement : MonoBehaviour
     {
         SetAnim();
         SetDirection();
-
-
-
     }
 
     void SetAnim()
