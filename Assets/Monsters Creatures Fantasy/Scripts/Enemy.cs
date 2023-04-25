@@ -108,7 +108,6 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("koşuyor");
 
-            Debug.Log("koşuyor");
             EnemyMove(movement);
         }
     }

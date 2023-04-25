@@ -5,16 +5,11 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public Animator animator;
-
-
     public int maxHealth = 100;
-    int currentHealth;
-    public int gunHealth = 10;
+    private int currentHealth;
+    private int gunDamage = 10;
 
     public HealthBar healthBar;
-
-  
-
 
     // Start is called before the first frame update
     void Start()
@@ -35,15 +30,13 @@ public class EnemyHealth : MonoBehaviour
             Die();
         }
 
-        //Destroy(gameObject);
-
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
 
         Invoke("Deneme", 1f);
 
-        
+
     }
 
     void Die()
@@ -57,11 +50,10 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
 
         Invoke("DestroyEnemy", 3f);
-        //this.enabled = false;
-
+        
     }
 
-   void DestroyEnemy()
+    void DestroyEnemy()
     {
         Destroy(gameObject);
     }
@@ -69,19 +61,18 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-    
 
         if (col.tag == "Bullet")
         {
-            gunHealth--;
+            currentHealth -= gunDamage;
 
-            healthBar.SetHealth(gunHealth);
+            healthBar.SetHealth(currentHealth);
 
-            if (gunHealth <= 0)
+            if (currentHealth <= 0)
             {
                 Destroy(gameObject);
             }
-
+              
         }
     }
 

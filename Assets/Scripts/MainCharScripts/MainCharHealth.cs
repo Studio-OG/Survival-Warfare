@@ -11,6 +11,8 @@ public class MainCharHealth : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator enemyAnim;
+    public bool gameOver = false;
+    private MainCharMovement mainCharMovementScript;
 
 
     void Start()
@@ -19,6 +21,7 @@ public class MainCharHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         animator = GetComponent<Animator>();
+        mainCharMovementScript= GameObject.FindGameObjectWithTag("Player").GetComponent<MainCharMovement>();
     }
 
 
@@ -37,21 +40,20 @@ public class MainCharHealth : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Die();
+              
             }
         }
+
         Invoke("Deneme",0.5f);
-
-        //Destroy(gameObject);
-
 
     }
 
 
-    void Die()
+    public void Die()
     {
-       
-        // Die
-        Debug.Log("Player died!");
+        Debug.Log("Player died!");  //Die
+        
+        gameOver = true;
 
         animator.SetBool("IsDead", true);
         enemyAnim.SetBool("IsRun", false);
@@ -59,13 +61,13 @@ public class MainCharHealth : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
 
-        this.enabled = false;
     }
 
     public void Deneme()
     {
         animator.SetBool("IsHurt", false);
     }
+
 }
 
 

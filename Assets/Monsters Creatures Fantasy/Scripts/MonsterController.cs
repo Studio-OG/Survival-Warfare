@@ -14,6 +14,8 @@ public class MonsterController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private bool IsFlying;
 
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -103,3 +105,5 @@ public class MonsterController : MonoBehaviour
 
 
 }
+
+
