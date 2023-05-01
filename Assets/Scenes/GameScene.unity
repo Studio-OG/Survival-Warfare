@@ -126494,6 +126494,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4010413306867068409, guid: 09199cb4fef793145b1a67b937d41a93,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 663576493}
     - target: {fileID: 5280304698860216130, guid: 09199cb4fef793145b1a67b937d41a93,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -127616,7 +127621,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &791993616
 MonoBehaviour:

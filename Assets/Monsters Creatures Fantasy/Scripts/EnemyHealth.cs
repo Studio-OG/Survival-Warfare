@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     private int gunDamage = 10;
-
+    private CoinController coinController;
     public HealthBar healthBar;
 
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         animator = GetComponent<Animator>();
+        coinController = GetComponent<CoinController>();
     }
 
     public void TakeDamage(int damage)
