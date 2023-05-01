@@ -25,7 +25,7 @@ public class MenuViewController : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         StartViewController.IsStart = false;
     }
 }

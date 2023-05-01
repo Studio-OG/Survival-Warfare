@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-  
-
     public MainCharHealth mainCharHealth;
     public Animator animator;
 

@@ -6,15 +6,15 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] float speed;
-    [SerializeField] Transform player;
+    private Transform player;
     Vector2 movement;
     Transform enemyPosition;
     Rigidbody2D enemyRB;
     private Animator animator;
     SpriteRenderer enemySR;
     public bool canMove = true;
-    public Animator playerAnim;
-    
+    private Animator playerAnim;
+
 
     public MainCharHealth mainCharHealth;
 
@@ -27,8 +27,8 @@ public class Enemy : MonoBehaviour
         enemyRB = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemySR = GetComponent<SpriteRenderer>();
-     
-        
+        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        playerAnim = GameObject.FindWithTag("Player").GetComponent<Animator>();
     }
 
 
@@ -51,13 +51,12 @@ public class Enemy : MonoBehaviour
 
 
 
-    
+
 
 
     // Update is called once per frame
     void Update()
     {
-
         if (canMove)
         {
             animator.SetBool("IsClose", false); // atak animasyonunu durdur
@@ -75,7 +74,7 @@ public class Enemy : MonoBehaviour
 
         }
         else
-        { 
+        {
             animator.SetBool("IsRun", false);
 
         }
