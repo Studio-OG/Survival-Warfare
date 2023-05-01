@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 
 public class MainCharHealth : MonoBehaviour
 {
@@ -14,21 +11,17 @@ public class MainCharHealth : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator enemyAnim;
+    public bool gameOver = false;
+    private MainCharMovement mainCharMovementScript;
 
-    private void Update()
-    {
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
+
     void Start()
 
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         animator = GetComponent<Animator>();
+        mainCharMovementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MainCharMovement>();
     }
 
 
@@ -44,26 +37,37 @@ public class MainCharHealth : MonoBehaviour
 
             healthBar.SetHealth(currentHealth);
 
-           
+            if (currentHealth <= 0)
+            {
+                Die();
+
+            }
         }
-        Invoke("Deneme",0.5f);
 
-        //Destroy(gameObject);
-
+        Invoke("Deneme", 0.5f);
 
     }
 
 
-    void Die()
+    public void Die()
     {
+        Debug.Log("Player died!");  //Die
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOver = true;
+
+        animator.SetBool("IsDead", true);
+        enemyAnim.SetBool("IsRun", false);
+
+
+        GetComponent<Collider2D>().enabled = false;
+
     }
 
     public void Deneme()
     {
         animator.SetBool("IsHurt", false);
     }
+
 }
 
 
