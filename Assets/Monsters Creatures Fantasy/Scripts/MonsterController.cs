@@ -14,7 +14,7 @@ public class MonsterController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private bool IsFlying;
 
-    public MainCharHealth mainCharHealth;
+    private MainCharHealth mainCharHealth;
 
     void Start()
     {
@@ -23,6 +23,7 @@ public class MonsterController : MonoBehaviour
         MonsterPosition = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        mainCharHealth = GameObject.FindWithTag("Player").GetComponent<MainCharHealth>();
         IsFlying = true;
     }
 

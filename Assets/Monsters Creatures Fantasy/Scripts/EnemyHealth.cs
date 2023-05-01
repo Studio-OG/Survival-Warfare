@@ -9,9 +9,9 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public int gunHealth = 10;
-
+    public GameObject coin; 
     public HealthBar healthBar;
-
+    private CoinController coinController;
     private void Update()
     {
         healthBar.SetHealth(currentHealth);
@@ -23,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         animator = GetComponent<Animator>();
+        coinController = GameObject.Find("CoinController").GetComponent<CoinController>();
     }
 
     public void TakeDamage(int damage)
@@ -92,6 +93,7 @@ public class EnemyHealth : MonoBehaviour
 
     void DestroyEnemy()
     {
+        coinController.InstantiateCoin(coin, transform.position);
         Destroy(gameObject);
     }
 

@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     private Animator playerAnim;
 
 
-    public MainCharHealth mainCharHealth;
+    private MainCharHealth mainCharHealth;
 
 
 
@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         enemySR = GetComponent<SpriteRenderer>();
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         playerAnim = GameObject.FindWithTag("Player").GetComponent<Animator>();
+        mainCharHealth = GameObject.FindWithTag("Player").GetComponent<MainCharHealth>();
     }
 
 

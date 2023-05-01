@@ -5,19 +5,8 @@ using UnityEngine.Timeline;
 
 public class CoinController : MonoBehaviour
 {
-    [SerializeField] private GameObject coin;
-    // Start is called before the first frame update
-    void Start()
+    public void InstantiateCoin(GameObject coin,Vector3 position)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            Instantiate(coin,transform.position,Quaternion.identity);
-        }
+        Instantiate(coin, position, Quaternion.identity);
     }
 }

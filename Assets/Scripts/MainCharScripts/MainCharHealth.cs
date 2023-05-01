@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCharHealth : MonoBehaviour
 {
@@ -36,8 +37,9 @@ public class MainCharHealth : MonoBehaviour
 
     {
 
-        if (enemyAnim.GetBool("IsClose") && !animator.GetBool("IsAttack"))
-        {
+        //if (enemyAnim.GetBool("IsClose") && !animator.GetBool("IsAttack"))
+        //{
+
             animator.SetBool("IsHurt", true);
 
             currentHealth -= damage;
@@ -49,7 +51,7 @@ public class MainCharHealth : MonoBehaviour
                 Die();
 
             }
-        }
+       // }
 
         Invoke("Deneme", 0.5f);
 
@@ -58,16 +60,7 @@ public class MainCharHealth : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Player died!");  //Die
-
-        gameOver = true;
-
-        animator.SetBool("IsDead", true);
-        enemyAnim.SetBool("IsRun", false);
-
-
-        GetComponent<Collider2D>().enabled = false;
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Deneme()

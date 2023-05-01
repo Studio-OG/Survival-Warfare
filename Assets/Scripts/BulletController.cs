@@ -24,14 +24,14 @@ public class BulletController : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyHealth>().TakeDamage(5);
+            collision.GetComponent<EnemyHealth>().TakeDamage(50);
             Destroy(gameObject);
         }
 
         else if (collision.CompareTag("Flight"))
         {
 
-            collision.GetComponent<EnemyHealth>().TakeDamageFlight(5);
+            collision.GetComponent<EnemyHealth>().TakeDamageFlight(50);
             Destroy(gameObject);
 
         }

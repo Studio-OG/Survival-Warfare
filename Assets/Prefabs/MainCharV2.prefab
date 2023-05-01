@@ -722,6 +722,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4845974927979997327}
     m_Modifications:
+    - target: {fileID: 4102310639630959557, guid: d60811767bf68554c8b070b5c2b1cbf7,
+        type: 3}
+      propertyPath: GameCursorImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 1d78ea13ed0615c4996735add71cbd43, type: 3}
+    - target: {fileID: 4102310639630959557, guid: d60811767bf68554c8b070b5c2b1cbf7,
+        type: 3}
+      propertyPath: MenuCurcorImage
+      value: 
+      objectReference: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
+    - target: {fileID: 6407805188681352641, guid: d60811767bf68554c8b070b5c2b1cbf7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6407805188681352642, guid: d60811767bf68554c8b070b5c2b1cbf7,
         type: 3}
       propertyPath: m_RootOrder
