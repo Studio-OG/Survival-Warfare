@@ -7,17 +7,18 @@ public class MonsterController : MonoBehaviour
 {
     private Transform MonsterPosition;
     private Animator anim;
-    [SerializeField] private Transform player;
+    private Transform player;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Vector2 hareket;
     [SerializeField] private float moveSpeed;
     private bool IsFlying;
 
-    public MainCharHealth mainCharHealth;
+
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         anim = GetComponent<Animator>();
         MonsterPosition = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
@@ -103,10 +104,7 @@ public class MonsterController : MonoBehaviour
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
 
-    public void Attack()
-    {
-        mainCharHealth.currentHealth -= 10;
-    }
-
 
 }
+
+
