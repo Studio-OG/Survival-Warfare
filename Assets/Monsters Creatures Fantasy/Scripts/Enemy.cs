@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (canMove)
         {
             animator.SetBool("IsClose", false); // atak animasyonunu durdur
@@ -108,7 +109,6 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("koşuyor");
 
-            Debug.Log("koşuyor");
             EnemyMove(movement);
         }
     }
@@ -124,6 +124,7 @@ public class Enemy : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("Saldırı yapıldı");
         mainCharHealth.TakeDamage(10);
     }
 }
