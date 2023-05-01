@@ -14,7 +14,7 @@ public class MonsterController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     private bool IsFlying;
 
-
+    public MainCharHealth mainCharHealth;
 
     void Start()
     {
@@ -106,6 +106,7 @@ public class MonsterController : MonoBehaviour
     public void Attack()
     {
         mainCharHealth.currentHealth -= 10;
+        Debug.Log("kuþvurdu");
     }
 
 }
