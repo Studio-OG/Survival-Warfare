@@ -14,7 +14,14 @@ public class MainCharHealth : MonoBehaviour
     public bool gameOver = false;
     private MainCharMovement mainCharMovementScript;
 
-
+    private void Update()
+    {
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
     void Start()
 
     {
