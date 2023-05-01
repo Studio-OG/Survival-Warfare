@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class MainCharMovement : MonoBehaviour
 {
 
+
     [SerializeField] float speed;
 
 
@@ -14,8 +15,13 @@ public class MainCharMovement : MonoBehaviour
     Rigidbody2D playerRB;
     public Animator playerAnim;
     SpriteRenderer playerSR;
+   
+    bool canMove = true;
 
     public GameObject crossHair;
+
+
+    
 
 
     // Start is called before the first frame update
@@ -24,12 +30,15 @@ public class MainCharMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         playerSR = GetComponent<SpriteRenderer>();
+
     }
+
 
 
 
     private void FixedUpdate()
     {
+
 
         playerRB.velocity = movement * speed;
 
@@ -39,43 +48,50 @@ public class MainCharMovement : MonoBehaviour
     {
         SetAnim();
         SetDirection();
-
     }
 
     void SetAnim()
     {
-
-        if (playerRB.velocity != Vector2.zero)
+        if (canMove)
         {
-            playerAnim.SetBool("IsRun", true);
-        }
-        else
-        {
-            playerAnim.SetBool("IsRun", false);
+            if (playerRB.velocity != Vector2.zero)
+            {
+                playerAnim.SetBool("IsRun", true);
+            }
+            else
+            {
+                playerAnim.SetBool("IsRun", false);
 
+            }
         }
 
     }
 
     void SetDirection()
     {
-        if (movement.x <= 0f)
-        {
-            playerSR.flipX = true;
-        }
-        else
-        {
-            playerSR.flipX = false;
-        }
 
+        if (canMove)
+        {
+            if (movement.x <= 0f)
+            {
+                playerSR.flipX = true;
+            }
+            else
+            {
+                playerSR.flipX = false;
+            }
+        }
     }
 
-
+    
 
     void OnMovement(InputValue value)
     {
         movement = value.Get<Vector2>();
     }
+
+
+
 
 
 }
@@ -88,3 +104,4 @@ public class MainCharMovement : MonoBehaviour
 
 
 
+  

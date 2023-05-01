@@ -19,4 +19,21 @@ public class BulletController : MonoBehaviour
 
         Destroy(gameObject, 2f);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<EnemyHealth>().TakeDamage(5);
+            Destroy(gameObject);
+        }
+
+        else if (collision.CompareTag("Flight"))
+        {
+
+            collision.GetComponent<EnemyHealth>().TakeDamageFlight(5);
+            Destroy(gameObject);
+
+        }
+    }
 }

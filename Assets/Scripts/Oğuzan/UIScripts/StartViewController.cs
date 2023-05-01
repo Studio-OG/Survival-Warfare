@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class StartViewController : MonoBehaviour
 {
-    public static bool IsStart = false;
+    public static bool IsStart;
     private bool musicStatus = true;
     public AudioSource mainMusic;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+         IsStart = false;
     }
     // Update is called once per frame
     void Update()
