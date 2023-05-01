@@ -103,7 +103,10 @@ public class MonsterController : MonoBehaviour
     {
         rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
     }
-
+    public void Attack()
+    {
+        mainCharHealth.currentHealth -= 10;
+    }
 
 }
 
