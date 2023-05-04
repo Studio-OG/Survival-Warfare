@@ -13,17 +13,19 @@ public class MonsterController : MonoBehaviour
     private Vector2 hareket;
     [SerializeField] private float moveSpeed;
     private bool IsFlying;
+    private EnemyHealth enemyHealth;
 
     private MainCharHealth mainCharHealth;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        mainCharHealth = GameObject.FindWithTag("Player").GetComponent<MainCharHealth>();
         anim = GetComponent<Animator>();
         MonsterPosition = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        mainCharHealth = GameObject.FindWithTag("Player").GetComponent<MainCharHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
         IsFlying = true;
     }
 
@@ -60,25 +62,28 @@ public class MonsterController : MonoBehaviour
         }
         #endregion
 
+        Debug.Log(enemyHealth.currentHealth);
 
 
 
 
         #region Karaktere do?ru hareket et
-        Vector3 direction = player.position - MonsterPosition.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        if (direction.x <= 0)
+        if (enemyHealth.currentHealth > 0)
         {
-            sr.flipY = true;
+            Vector3 direction = player.position - MonsterPosition.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            if (direction.x <= 0)
+            {
+                sr.flipY = true;
+            }
+            else
+            {
+                sr.flipY = false;
+            }
+            rb.rotation = angle;
+            direction.Normalize();
+            hareket = direction;
         }
-        else
-        {
-            sr.flipY = false;
-        }
-        rb.rotation = angle;
-        direction.Normalize();
-        hareket = direction;
-
         #endregion
 
     }
@@ -89,7 +94,7 @@ public class MonsterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (IsFlying == true)
+        if (IsFlying == true && enemyHealth.currentHealth > 0)
         {
             MoveMonster(hareket);
         }
