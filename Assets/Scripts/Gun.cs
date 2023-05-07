@@ -8,9 +8,8 @@ public class Gun : MonoBehaviour
     public GameObject cross;
     public GameObject bullet;
     private Vector3 mousePos;
-    public float offSet;
+    private float offSet = 10;
    
-
 
 
     void Start()

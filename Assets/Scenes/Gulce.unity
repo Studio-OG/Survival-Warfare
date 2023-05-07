@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 15013005}
   m_Layer: 5
   m_Name: LevelBar
-  m_TagString: Untagged
+  m_TagString: Level Bar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9772,7 +9772,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037289500}
-  - component: {fileID: 2037289499}
   - component: {fileID: 2037289498}
   m_Layer: 0
   m_Name: SpawnManager
@@ -9800,26 +9799,7 @@ MonoBehaviour:
   spawnDelay: 4
   spawnInterval: 10
   enemySpawn: 0
-  enemyMax: 15
---- !u!114 &2037289499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2037289497}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bcc480f13c0e469caadef4cb8418163, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  enemySpawn: 0
-  enemyMax: 0
-  waveNumber: 1
-  perWaveEnemyNumber: 5
+  enemyMax: 100
 --- !u!4 &2037289500
 Transform:
   m_ObjectHideFlags: 0

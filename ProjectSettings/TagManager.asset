@@ -9,6 +9,7 @@ TagManager:
   - Coin2
   - Bullet
   - Flight
+  - Level Bar
   layers:
   - Default
   - TransparentFX

@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private Vector2 target;
-    public float speed;
-   
+ 
+    private Vector3 mousePos;
+    private Camera mainCam;
+    private Rigidbody2D rb;
+    public float force;
 
-    void Start()
+
+    private void Start()
     {
-
-        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-    void Update()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-
-        Destroy(gameObject, 2f);
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        rb = GetComponent<Rigidbody2D>();
+        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = mousePos - transform.position;
+        Vector3 rotation = transform.position - mousePos;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,4 +39,6 @@ public class BulletController : MonoBehaviour
 
         }
     }
+
+
 }

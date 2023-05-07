@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class SpawnManager : MonoBehaviour
     public float spawnDelay = 4.0f;
     public float spawnInterval = 10.0f;
     public int enemySpawn;
-    public int enemyMax = 15;
+    public int enemyMax = 100;
+
    
     private MainCharHealth mainCharHealthScript;
+
 
     void Start()
     {
@@ -44,12 +47,9 @@ public class SpawnManager : MonoBehaviour
                 enemySpawn++;
             }
         }
-
           
-           
+    
     }
 
 
-
-    
 }
