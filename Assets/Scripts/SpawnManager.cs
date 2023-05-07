@@ -28,13 +28,10 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         
-
     }
-
 
     void SpawnWave()
     {
-
         if (!mainCharHealthScript.gameOver && enemySpawn != enemyMax)
         {
             for (int i = 0; i < perWaveEnemyNumber; i++)
@@ -47,7 +44,7 @@ public class SpawnManager : MonoBehaviour
                 enemySpawn++;
             }
         }
-          
+        
     
     }
 
