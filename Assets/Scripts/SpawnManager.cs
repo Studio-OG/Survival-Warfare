@@ -10,7 +10,6 @@ public class SpawnManager : MonoBehaviour
     public float spawnDelay = 4.0f;
     public float spawnInterval = 10.0f;
     public int enemySpawn;
-    public int enemyMax = 100;
 
    
     private MainCharHealth mainCharHealthScript;
@@ -32,7 +31,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnWave()
     {
-        if (!mainCharHealthScript.gameOver && enemySpawn != enemyMax)
+        if (!mainCharHealthScript.gameOver)
         {
             for (int i = 0; i < perWaveEnemyNumber; i++)
             {
