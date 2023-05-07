@@ -26,6 +26,10 @@ public class LevelBarController : MonoBehaviour
             ScoreAndHealth.Score = 0;
             slider.maxValue += 5;
             //slider.value = slider.minValue;
+
+            GameObject spawnManagerObject = GameObject.Find("SpawnManager");
+            SpawnManager spawnManagerScript = spawnManagerObject.GetComponent<SpawnManager>();
+            spawnManagerScript.spawnInterval -= 2f;
         }
     }
 
