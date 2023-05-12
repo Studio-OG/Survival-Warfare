@@ -21,7 +21,14 @@ public class BulletController : MonoBehaviour
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
+        
     }
+
+    void Update()
+    {
+        Invoke("DestroyBullet", 2f);
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -40,5 +47,8 @@ public class BulletController : MonoBehaviour
         }
     }
 
-
+   private void DestroyBullet()
+   {
+        Destroy(gameObject);
+   }
 }

@@ -21,7 +21,8 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnWave", spawnDelay, spawnInterval);
         mainCharHealthScript = GameObject.FindGameObjectWithTag("Player").GetComponent<MainCharHealth>();
         enemySpawn = 0;
-        
+
+        StartCoroutine(SpawnWave());
     }
 
     void Update()
@@ -29,11 +30,29 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    void SpawnWave()
+    //void SpawnWave()
+    //{
+    //    if (!mainCharHealthScript.gameOver)
+    //    {
+    //        for (int i = 0; i < perWaveEnemyNumber; i++)
+    //        {
+    //            float randX = Random.Range(-40.0f, 40.0f);
+    //            float randY = Random.Range(-40.0f, 40.0f);
+    //            Vector3 randPos = new Vector3(randX, randY, 0.0f);
+    //            GameObject randEnemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
+    //            Instantiate(randEnemyPrefab, randPos, randEnemyPrefab.transform.rotation);
+    //            enemySpawn++;
+    //        }
+    //    }
+        
+    
+    //}
+
+    public IEnumerator SpawnWave()
     {
-        if (!mainCharHealthScript.gameOver)
+        while (!mainCharHealthScript.gameOver)
         {
-            for (int i = 0; i < perWaveEnemyNumber; i++)
+            for(int i = 0; i<perWaveEnemyNumber; i++)
             {
                 float randX = Random.Range(-40.0f, 40.0f);
                 float randY = Random.Range(-40.0f, 40.0f);
@@ -42,10 +61,9 @@ public class SpawnManager : MonoBehaviour
                 Instantiate(randEnemyPrefab, randPos, randEnemyPrefab.transform.rotation);
                 enemySpawn++;
             }
-        }
-        
-    
-    }
 
+            yield return new WaitForSeconds(spawnInterval);
+        }
+    }
 
 }

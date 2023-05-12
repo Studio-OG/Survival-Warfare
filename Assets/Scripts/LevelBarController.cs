@@ -7,12 +7,14 @@ public class LevelBarController : MonoBehaviour
 {
     public Slider slider;
     public Canvas levelUpCanvas;
+    private SpawnManager spawnManagerScript;
+
     // Start is called before the first frame update
     void Start()
     {
         slider.value = slider.minValue;
+        spawnManagerScript = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -27,9 +29,14 @@ public class LevelBarController : MonoBehaviour
             slider.maxValue += 5;
             //slider.value = slider.minValue;
 
-            GameObject spawnManagerObject = GameObject.Find("SpawnManager");
-            SpawnManager spawnManagerScript = spawnManagerObject.GetComponent<SpawnManager>();
+            spawnManagerScript.StopCoroutine("SpawnWave"); //SpawnManagerın çalışmasını durdur
+
+           
             spawnManagerScript.spawnInterval -= 2f;
+
+
+            spawnManagerScript.StartCoroutine("SpawnWave"); //SpawnManagerın tekrar çalışmasını sağla
+
         }
     }
 
