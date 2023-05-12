@@ -7,7 +7,6 @@ public class MainCharHealth : MonoBehaviour
 {
 
     public Animator animator;
-
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;

@@ -34,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            ScoreAndHealth.totalScore += 10;
             Die();
         }
 
@@ -54,6 +55,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            ScoreAndHealth.totalScore += 10;
             DieFlight();
         }
         //Destroy(gameObject);
@@ -74,7 +76,7 @@ public class EnemyHealth : MonoBehaviour
         // Düşmanı devre dışı bırak
         GetComponent<Collider2D>().enabled = false;
 
-        Invoke("DestroyEnemy", 3f);
+        Invoke("DestroyEnemy", 1f);
         //this.enabled = false;
 
     }
@@ -86,7 +88,7 @@ public class EnemyHealth : MonoBehaviour
         // Düşmanı devre dışı bırak
         GetComponent<Collider2D>().enabled = false;
 
-        Invoke("DestroyEnemy", 3f);
+        Invoke("DestroyEnemy", 1f);
         //this.enabled = false;
 
     }

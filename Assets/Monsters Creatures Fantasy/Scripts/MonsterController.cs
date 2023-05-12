@@ -62,7 +62,6 @@ public class MonsterController : MonoBehaviour
         }
         #endregion
 
-        Debug.Log(enemyHealth.currentHealth);
 
 
 

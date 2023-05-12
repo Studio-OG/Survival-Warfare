@@ -7,7 +7,7 @@ public class MainCharMovement : MonoBehaviour
 {
 
 
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
 
 
     Vector2 movement;

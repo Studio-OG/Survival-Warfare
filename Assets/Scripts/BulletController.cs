@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+    public static int damageChar = 20;
 
 
     private void Start()
@@ -34,14 +35,14 @@ public class BulletController : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyHealth>().TakeDamage(50);
+            collision.GetComponent<EnemyHealth>().TakeDamage(damageChar);
             Destroy(gameObject);
         }
 
         else if (collision.CompareTag("Flight"))
         {
 
-            collision.GetComponent<EnemyHealth>().TakeDamageFlight(50);
+            collision.GetComponent<EnemyHealth>().TakeDamageFlight(damageChar);
             Destroy(gameObject);
 
         }
