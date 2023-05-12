@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
+using UnityEditor;
 using UnityEngine;
 
 public class CoinScoreController : MonoBehaviour
 {
+    public static int coin2Value = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +18,7 @@ public class CoinScoreController : MonoBehaviour
             }
             else if(gameObject.tag == "Coin2")
             {
-                ScoreAndHealth.Score+=2;
+                ScoreAndHealth.Score+= coin2Value;
             }
             Object.Destroy(gameObject);
         }

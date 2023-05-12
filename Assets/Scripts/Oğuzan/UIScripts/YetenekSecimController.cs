@@ -70,7 +70,7 @@ public class YetenekSecimController : MonoBehaviour
 
     public int RandomYetenek(int index)
     {
-        Debug.Log(index);
+
         switch (index)
         {
             case 0:
@@ -90,22 +90,44 @@ public class YetenekSecimController : MonoBehaviour
                 }
             case 3:
                 {
+                    int temp = UnityEngine.Random.Range(0, 10);
+                    if (temp % 2 == 0)
+                    {
+                        MainCharHealth.currentHealth = MainCharHealth.currentHealth / 2;
+                    }
+                    else if (temp % 2 == 1)
+                    {
+                        MainCharHealth.currentHealth = MainCharHealth.maxHealth;
+                        BulletController.damageChar = BulletController.damageChar + (BulletController.damageChar * 20) / 100;
+                    }
                     break;
                 }
             case 4:
                 {
+                    int temp = UnityEngine.Random.Range(0, 10);
+                    if (temp % 2 == 0)
+                    {
+                        MainCharHealth.currentHealth = 0;
+                    }
+                    else if (temp % 2 == 1)
+                    {
+                        BulletController.damageChar = BulletController.damageChar * 2;
+                    }
                     break;
                 }
             case 5:
                 {
+                    MainCharHealth.maxHealth = MainCharHealth.maxHealth + 20;
                     break;
                 }
             case 6:
                 {
+                    CoinScoreController.coin2Value += 1;
                     break;
                 }
             default:
                 {
+                    Debug.Log("Bir Hata Meydana Geldi /Kaynak Yetenek seçim kontroller switch-case");
                     break;
                 }
         }

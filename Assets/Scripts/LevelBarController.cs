@@ -25,10 +25,10 @@ public class LevelBarController : MonoBehaviour
         yetenekAciklamalar[0] = "Bu güçlendirme canýný fuller";
         yetenekAciklamalar[1] = "Bu güçlendirme hasarýnýz %20 oranýnda arttýrýr";
         yetenekAciklamalar[2] = "Bu güçlendirme hareket hýzýný %20 oranýnda arttýrýr";
-        yetenekAciklamalar[3] = "Bu güçlendirme canýný yarý yarýya azaltabilir(%50) yada canýný fuller ve hasarýný %50 arttýrýr(%50)";
+        yetenekAciklamalar[3] = "Bu güçlendirme canýný yarý yarýya azaltabilir(%50) yada canýný fuller ve hasarýný %20 arttýrýr(%50)";
         yetenekAciklamalar[4] = "Bu güçlendirme seni öldürebilir(%50) yada hasarýný 2 ye katlar(%50)";
-        yetenekAciklamalar[5] = "?";
-        yetenekAciklamalar[6] = "Bu güçlendirme Sarý coinlerden fazla puan almaný saðlar";
+        yetenekAciklamalar[5] = "Maksimum canýný 20 arttýr";
+        yetenekAciklamalar[6] = "Bu güçlendirme Sarý coinlerden 1 fazla puan almaný saðlar";
     }
 
     // Update is called once per frame
