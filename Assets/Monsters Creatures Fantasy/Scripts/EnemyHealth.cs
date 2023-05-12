@@ -34,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            ScoreAndHealth.totalScore += 10;
             Die();
         }
 
@@ -54,6 +55,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            ScoreAndHealth.totalScore += 10;
             DieFlight();
         }
         //Destroy(gameObject);
