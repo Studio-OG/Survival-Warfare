@@ -131728,6 +131728,11 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1841585772}
+    - target: {fileID: 609787210431240758, guid: b5d12cdd5bd2b1941b4d8aa98b1bee3a,
+        type: 3}
+      propertyPath: totalScoreText
+      value: 
+      objectReference: {fileID: 1251943811}
     - target: {fileID: 609787211568346605, guid: b5d12cdd5bd2b1941b4d8aa98b1bee3a,
         type: 3}
       propertyPath: enemyAnim
