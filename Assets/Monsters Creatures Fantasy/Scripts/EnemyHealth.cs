@@ -74,7 +74,7 @@ public class EnemyHealth : MonoBehaviour
         // Düşmanı devre dışı bırak
         GetComponent<Collider2D>().enabled = false;
 
-        Invoke("DestroyEnemy", 3f);
+        Invoke("DestroyEnemy", 1f);
         //this.enabled = false;
 
     }
@@ -86,7 +86,7 @@ public class EnemyHealth : MonoBehaviour
         // Düşmanı devre dışı bırak
         GetComponent<Collider2D>().enabled = false;
 
-        Invoke("DestroyEnemy", 3f);
+        Invoke("DestroyEnemy", 1f);
         //this.enabled = false;
 
     }
