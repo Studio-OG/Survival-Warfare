@@ -61,8 +61,15 @@ public class SpawnManager : MonoBehaviour
                 Instantiate(randEnemyPrefab, randPos, randEnemyPrefab.transform.rotation);
                 enemySpawn++;
             }
+            if (spawnInterval <= 2)
+            {
+                yield return new WaitForSeconds(2);
 
-            yield return new WaitForSeconds(spawnInterval);
+            }
+            else
+            {
+                yield return new WaitForSeconds(spawnInterval);
+            }
         }
     }
 
