@@ -14,10 +14,12 @@ public class CoinScoreController : MonoBehaviour
         {
             if (gameObject.tag == "Coin")
             {
+                GetComponent<AudioSource>().Play();
                 ScoreAndHealth.Score++;
             }
             else if(gameObject.tag == "Coin2")
             {
+                GetComponent<AudioSource>().Play();
                 ScoreAndHealth.Score+= coin2Value;
             }
             Object.Destroy(gameObject);

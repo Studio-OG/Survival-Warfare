@@ -25,7 +25,7 @@ public class ScoreAndHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        totalScoreText.text = totalScore.ToString();
+        totalScoreText.text = "Total Score: " + totalScore.ToString();
         speedText.text = "Speed: " + GameObject.FindGameObjectWithTag("Player").GetComponent<MainCharMovement>().speed;
         damageText.text = "Damage: " + BulletController.damageChar.ToString();
         Scoretext.text = Score.ToString() + " / " + GameObject.Find("LevelBar").GetComponent<Slider>().maxValue; ;
