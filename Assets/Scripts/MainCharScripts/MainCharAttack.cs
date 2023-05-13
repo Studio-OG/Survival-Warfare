@@ -7,31 +7,20 @@ public class MainCharAttack : MonoBehaviour
     public Animator playerAnim;
     public Transform attackPoint;
     public LayerMask enemyLayers;
-
     public float attackRange = 0.5f;
     public int attackDamage = 40;
-
     public float attackRate = 2f;
-   
-
-
     private bool canAttack = true;
-
 
     private void Start()
     {
         playerAnim = GetComponent<Animator>();
     }
 
-
-
-
-
-
     // Update is called once per frame
     void Update()
     {
-        Attack();
+        //Attack();
     }
 
 
