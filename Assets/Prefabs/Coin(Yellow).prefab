@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fac603f59c4dcf44ade89fec1a9de99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinClip: {fileID: 8300000, guid: 6a0273c48506444fba13feaf08e2e8e6, type: 3}
 --- !u!82 &-151351755701424687
 AudioSource:
   m_ObjectHideFlags: 0
