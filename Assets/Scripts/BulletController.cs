@@ -9,12 +9,11 @@ public class BulletController : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
-    public static int damageChar;
+    public static int damageChar = 20;
 
 
     private void Start()
     {
-        damageChar = 20;
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);

@@ -6,11 +6,10 @@ using UnityEngine;
 
 public class CoinScoreController : MonoBehaviour
 {
-    public static int coin2Value;
+    public static int coin2Value = 1;
     private AudioSource audioSourceChar;
     private void Start()
     {
-        coin2Value = 1;
         audioSourceChar = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
     }
 
@@ -20,13 +19,13 @@ public class CoinScoreController : MonoBehaviour
         {
             if (gameObject.tag == "Coin")
             {
-               audioSourceChar.Play();
+                audioSourceChar.Play();
                 ScoreAndHealth.Score++;
             }
-            else if(gameObject.tag == "Coin2")
+            else if (gameObject.tag == "Coin2")
             {
                 audioSourceChar.Play();
-                ScoreAndHealth.Score+= coin2Value;
+                ScoreAndHealth.Score += coin2Value;
             }
             Object.Destroy(gameObject);
         }
